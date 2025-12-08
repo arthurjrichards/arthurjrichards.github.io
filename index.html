@@ -336,7 +336,39 @@
             color: var(--muted);
             margin-top: 4px;
         }
+        
+        .proj-slider {
+            margin: -4px -4px 10px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #00000008;
+        }
 
+        .proj-slider-track {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .proj-slider-track::-webkit-scrollbar {
+            display: none; /* hide scrollbar for cleaner look */
+        }
+
+        .proj-slide {
+            flex: 0 0 100%;
+            max-width: 100%;
+            height: auto;
+            scroll-snap-align: center;
+            display: block;
+        }
+
+        .proj-slider-hint {
+            font-size: 0.75rem;
+            color: var(--muted);
+            padding: 4px 6px 6px;
+            text-align: right;
+        }
         .contact-grid {
             display: grid;
             grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
@@ -428,19 +460,25 @@
 
         <div class="portfolio-grid">
             <!-- You can change these project cards to your real projects -->
-            <article class="proj-card">
-                <img src="image.png" alt="Walnut & Spanish Cedar lined Cigar Box" style="width:100%; border-radius: 6px; margin-bottom: 8px;">
-                <img src="image (1).png" alt="Walnut & Spanish Cedar Cigar Box" style="width:100%; border-radius: 6px; margin-bottom: 8px;">
-                <img src="Inside Tray.png" alt="Walnut & Spanish Cedar Cigar Box" style="width:100%; border-radius: 6px; margin-bottom: 8px;">
-                <img src="Cedar Lining.png" alt="Walnut & Spanish Cedar Cigar Box" style="width:100%; border-radius: 6px; margin-bottom: 8px;">
-                <img src="Tray Joinery.png" alt="Walnut & Spanish Cedar Cigar Box" style="width:100%; border-radius: 6px; margin-bottom: 8px;">
-                <div class="proj-tag">Humidor</div>
-                <div class="proj-title">Walnut &amp; Spanish Cedar Cigar Box</div>
-                <div class="proj-desc">
-                    Hand-cut joinery, Spanish cedar lining, and hardware chosen for a quiet, precise close.
-                </div>
-                <div class="proj-meta">In progress · Concept / prototype</div>
-            </article>
+           <article class="proj-card">
+    <div class="proj-slider">
+        <div class="proj-slider-track">
+            <img src="image.png" alt="Walnut &amp; Spanish Cedar Cigar Box" class="proj-slide">
+            <img src="image (1).png" alt="Walnut &amp; Spanish Cedar Cigar Box - alternate view" class="proj-slide">
+            <img src="Inside Tray.png" alt="Inside tray detail" class="proj-slide">
+            <img src="Cedar Lining.png" alt="Spanish cedar lining" class="proj-slide">
+            <img src="Tray Joinery.png" alt="Joinery detail" class="proj-slide">
+        </div>
+        <div class="proj-slider-hint">Swipe ⇢ for more views</div>
+    </div>
+
+    <div class="proj-tag">Humidor</div>
+    <div class="proj-title">Walnut &amp; Spanish Cedar Cigar Box</div>
+    <div class="proj-desc">
+        Hand-cut joinery, Spanish cedar lining, and hardware chosen for a quiet, precise close.
+    </div>
+    <div class="proj-meta">In progress · Concept / prototype</div>
+</article>
 
             <article class="proj-card">
                 <div class="proj-tag">Box</div>
