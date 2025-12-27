@@ -1,684 +1,597 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arthur Richards – Design & Craft</title>
-    <meta name="description" content="Arthur Richards – artist, craftsman, and problem solver. Woodworking, custom boxes and humidors, fine joinery, and thoughtful design.">
-    <style>
-        :root {
-            --bg: #f6f3ec;
-            --bg-alt: #fff;https://arthurjrichards.com/
-            --ink: #222222;
-            --muted: #777777;
-            --accent: #c18c47;
-            --accent-soft: #e6d1b0;
-            --border: #ded2bf;
-            --radius: 8px;
-            --shadow-soft: 0 16px 40px rgba(0, 0, 0, 0.06);
-            --max-width: 1080px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arthur Richards – Design & Craft</title>
+  <meta name="description" content="Arthur Richards – artist, craftsman, and problem solver. Woodworking, custom boxes and humidors, fine joinery, and thoughtful design.">
 
-        * {
-            box-sizing: border-box;
-        }
+  <!-- ONE (and only one) style block -->
+  <style>
+    :root {
+      --bg: #f6f3ec;
+      --bg-alt: #fff;
+      --ink: #222222;
+      --muted: #777777;
+      --accent: #c18c47;
+      --accent-soft: #e6d1b0;
+      --border: #ded2bf;
+      --radius: 8px;
+      --shadow-soft: 0 16px 40px rgba(0, 0, 0, 0.06);
+      --max-width: 1080px;
+    }
 
-        body {
-            margin: 0;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background-color: var(--bg);
-            color: var(--ink);
-            line-height: 1.6;
-        }
+    * { box-sizing: border-box; }
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+    }
 
-        header {
-            border-bottom: 1px solid var(--border);
-            background: linear-gradient(135deg, #fdfaf5, #f2eadf);
-        }
+    a { color: inherit; text-decoration: none; }
 
-        .nav-inner {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 18px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-        }
+    header {
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(135deg, #fdfaf5, #f2eadf);
+    }
 
-        .logo-mark {
-            font-weight: 600;
-            letter-spacing: 0.12em;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            padding: 6px 10px;
-            border: 1px solid var(--accent);
-            border-radius: 999px;
-        }
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
 
-        nav a {
-            margin-left: 18px;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            position: relative;
-        }
+    .logo-mark {
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      padding: 6px 10px;
+      border: 1px solid var(--accent);
+      border-radius: 999px;
+    }
 
-        nav a::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -4px;
-            width: 0;
-            height: 1px;
-            background-color: var(--accent);
-            transition: width 0.25s ease;
-        }
+    nav a {
+      margin-left: 18px;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      position: relative;
+    }
 
-        nav a:hover::after {
-            width: 100%;
-        }
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 1px;
+      background-color: var(--accent);
+      transition: width 0.25s ease;
+    }
 
-        .hero {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 56px 20px 48px;
-            display: grid;
-            grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
-            gap: 40px;
-            align-items: center;
-        }
+    nav a:hover::after { width: 100%; }
 
-        @media (max-width: 780px) {
-            .hero {
-                grid-template-columns: 1fr;
-                padding-top: 32px;
-            }
-            nav {
-                display: none; /* keep it simple for now on mobile */
-            }
-        }
+    .hero {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 56px 20px 48px;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+      gap: 40px;
+      align-items: center;
+    }
 
-        .hero-title {
-            font-size: clamp(2.5rem, 4vw, 3.2rem);
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
+    @media (max-width: 780px) {
+      .hero { grid-template-columns: 1fr; padding-top: 32px; }
+      nav { display: none; }
+    }
 
-        .hero-subtitle {
-            font-size: 1.1rem;
-            color: var(--muted);
-            max-width: 460px;
-        }
+    .hero-title {
+      font-size: clamp(2.5rem, 4vw, 3.2rem);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
 
-        .hero-tagline {
-            margin-top: 20px;
-            font-weight: 500;
-        }
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 460px;
+    }
 
-        .pill-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 16px;
-        }
+    .hero-tagline { margin-top: 20px; font-weight: 500; }
 
-        .pill {
-            border-radius: 999px;
-            border: 1px solid var(--border);
-            padding: 4px 10px;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: var(--muted);
-        }
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
 
-        .hero-actions {
-            margin-top: 28px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
+    .pill {
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
 
-        .btn {
-            padding: 10px 18px;
-            border-radius: 999px;
-            font-size: 0.95rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            border: 1px solid transparent;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
+    .hero-actions {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
 
-        .btn-primary {
-            background-color: var(--accent);
-            color: #fff;
-            box-shadow: var(--shadow-soft);
-        }
+    .btn {
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
 
-        .btn-primary:hover {
-            filter: brightness(0.95);
-        }
+    .btn-primary {
+      background-color: var(--accent);
+      color: #fff;
+      box-shadow: var(--shadow-soft);
+    }
 
-        .btn-ghost {
-            background: transparent;
-            border-color: var(--border);
-            color: var(--ink);
-        }
+    .btn-primary:hover { filter: brightness(0.95); }
 
-        .btn-ghost:hover {
-            border-color: var(--accent);
-        }
+    .btn-ghost {
+      background: transparent;
+      border-color: var(--border);
+      color: var(--ink);
+    }
 
-        .hero-card {
-            background-color: var(--bg-alt);
-            border-radius: 18px;
-            padding: 22px 22px 18px;
-            box-shadow: var(--shadow-soft);
-            border: 1px solid var(--border);
-            position: relative;
-            overflow: hidden;
-        }
+    .btn-ghost:hover { border-color: var(--accent); }
 
-        .hero-card::before {
-            content: "";
-            position: absolute;
-            inset: -80px;
-            opacity: 0.05;
-            background-image:
-                linear-gradient(135deg, transparent 0 40%, var(--accent) 40%, var(--accent) 60%, transparent 60% 100%);
-            transform: rotate(4deg);
-        }
+    .hero-card {
+      background-color: var(--bg-alt);
+      border-radius: 18px;
+      padding: 22px 22px 18px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
 
-        .hero-card-inner {
-            position: relative;
-        }
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -80px;
+      opacity: 0.05;
+      background-image: linear-gradient(135deg, transparent 0 40%, var(--accent) 40%, var(--accent) 60%, transparent 60% 100%);
+      transform: rotate(4deg);
+    }
 
-        .hero-card-label {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.18em;
-            color: var(--muted);
-            margin-bottom: 2px;
-        }
+    .hero-card-inner { position: relative; }
 
-        .hero-card-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
+    .hero-card-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+      margin-bottom: 2px;
+    }
 
-        .hero-card-list {
-            margin-top: 12px;
-            padding-left: 18px;
-            font-size: 0.9rem;
-            color: var(--muted);
-        }
+    .hero-card-title { font-size: 1.1rem; font-weight: 600; }
 
-        .section {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 32px 20px 40px;
-        }
+    .hero-card-list {
+      margin-top: 12px;
+      padding-left: 18px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
 
-        .section-header {
-            display: flex;
-            align-items: baseline;
-            justify-content: space-between;
-            gap: 16px;
-            margin-bottom: 18px;
-        }
+    .section {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 32px 20px 40px;
+    }
 
-        .section-title {
-            text-transform: uppercase;
-            letter-spacing: 0.16em;
-            font-size: 0.9rem;
-        }
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
 
-        .section-subtitle {
-            color: var(--muted);
-            font-size: 0.9rem;
-        }
+    .section-title {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.9rem;
+    }
 
-        .split {
-            display: grid;
-            grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-            gap: 32px;
-            align-items: start;
-        }
+    .section-subtitle { color: var(--muted); font-size: 0.9rem; }
 
-        @media (max-width: 780px) {
-            .split {
-                grid-template-columns: 1fr;
-            }
-        }
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 32px;
+      align-items: start;
+    }
 
-        .card-muted {
-            background-color: var(--bg-alt);
-            border-radius: var(--radius);
-            padding: 18px 18px 14px;
-            border: 1px solid var(--border);
-        }
+    @media (max-width: 780px) {
+      .split { grid-template-columns: 1fr; }
+    }
 
-        .card-muted h3 {
-            margin-top: 0;
-            margin-bottom: 8px;
-            font-size: 1rem;
-        }
+    .card-muted {
+      background-color: var(--bg-alt);
+      border-radius: var(--radius);
+      padding: 18px 18px 14px;
+      border: 1px solid var(--border);
+    }
 
-        .muted-list {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            font-size: 0.92rem;
-            color: var(--muted);
-        }
+    .card-muted h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
 
-        .muted-list li + li {
-            margin-top: 6px;
-        }
+    .muted-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
 
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 18px;
-        }
+    .muted-list li + li { margin-top: 6px; }
 
-        @media (max-width: 920px) {
-            .portfolio-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-        }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
 
-        @media (max-width: 640px) {
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+    @media (max-width: 920px) {
+      .portfolio-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
 
-        .proj-card {
-            background-color: var(--bg-alt);
-            border-radius: var(--radius);
-            padding: 14px 14px 16px;
-            border: 1px solid var(--border);
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
+    @media (max-width: 640px) {
+      .portfolio-grid { grid-template-columns: 1fr; }
+    }
 
-        .proj-tag {
-            font-size: 0.72rem;
-            text-transform: uppercase;
-            letter-spacing: 0.16em;
-            color: var(--muted);
-        }
+    .proj-card {
+      background-color: var(--bg-alt);
+      border-radius: var(--radius);
+      padding: 14px 14px 16px;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
 
-        .proj-title {
-            font-size: 0.98rem;
-            font-weight: 600;
-        }
+    .proj-tag {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+    }
 
-        .proj-desc {
-            font-size: 0.9rem;
-            color: var(--muted);
-        }
+    .proj-title { font-size: 0.98rem; font-weight: 600; }
+    .proj-desc { font-size: 0.9rem; color: var(--muted); }
+    .proj-meta { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
 
-        .proj-meta {
-            font-size: 0.8rem;
-            color: var(--muted);
-            margin-top: 4px;
-        }
-        
-        .proj-slider {
-            margin: -4px -4px 10px;
-            border-radius: 8px;
-            overflow: hidden;
-            background: #00000008;
-        }
-
-        .proj-slider-track {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .proj-slider-track::-webkit-scrollbar {
-            display: none; /* hide scrollbar for cleaner look */
-        }
-
-        .proj-slide {
-            flex: 0 0 100%;
-            max-width: 100%;
-            height: auto;
-            scroll-snap-align: center;
-            display: block;
-        }
-
-        .proj-slider-hint {
-            font-size: 0.75rem;
-            color: var(--muted);
-            padding: 4px 6px 6px;
-            text-align: right;
-        }
-        .contact-grid {
-            display: grid;
-            grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-            gap: 24px;
-        }
-
-        @media (max-width: 780px) {
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .contact-item {
-            font-size: 0.95rem;
-        }
-
-        .contact-label {
-            text-transform: uppercase;
-            letter-spacing: 0.16em;
-            font-size: 0.75rem;
-            color: var(--muted);
-        }
-
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 20px;
-            text-align: center;
-            font-size: 0.85rem;
-            color: var(--muted);
-        }
-    </style>
     /* ===== Slider (swipe) ===== */
-.proj-slider {
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: #fff;
-  padding: 10px;
-  overflow: hidden;              /* stops “bleeding” outside the card */
-}
+    .proj-slider {
+      margin: -4px -4px 10px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #00000008;
+      border: 1px solid var(--border);
+    }
 
-.project-images {
-  display: flex;
-  gap: 10px;
-  overflow-x: auto;              /* enables swipe */
-  scroll-snap-type: x mandatory; /* makes it snap */
-  -webkit-overflow-scrolling: touch;
-}
+    .proj-slider-track {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
 
-.project-images img {
-  flex: 0 0 100%;                /* each image takes full slider width */
-  width: 100%;
-  height: auto;
-  scroll-snap-align: start;
-  display: block;
-}
+    .proj-slider-track::-webkit-scrollbar { display: none; }
 
-/* optional: hide scrollbar */
-.project-images::-webkit-scrollbar {
-  display: none;
-}
-<style>
-/* ================================
-   Project Image Sizing – ArthurRichards.com
-   ================================ */
+    .proj-slide {
+      flex: 0 0 100%;
+      width: 100%;
+      height: auto;
+      scroll-snap-align: start;
+      display: block;
+    }
 
-/* Smaller images (NOT the slider) */
-.project-images-small img {
-  max-width: 420px;
-  width: 100%;
-  height: auto;
-  margin-bottom: 28px;
-}
-</style></head>
+    .proj-slider-hint {
+      font-size: 0.75rem;
+      color: var(--muted);
+      padding: 4px 6px 6px;
+      text-align: right;
+    }
+
+    /* Thumbnails */
+    .proj-thumbs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+
+    .proj-thumb {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      display: block;
+    }
+
+    /* Smaller stacked images (NOT the slider) */
+    .project-images-small img {
+      max-width: 420px;
+      width: 100%;
+      height: auto;
+      margin-bottom: 28px;
+      display: block;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 780px) {
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+
+    .contact-item { font-size: 0.95rem; }
+
+    .contact-label {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 20px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+
 <body>
-
-<header>
+  <header>
     <div class="nav-inner">
-        <div class="logo-mark">AR · Studio</div>
-        <nav>
-            <a href="#work">Work</a>
-            <a href="#about">About</a>
-            <a href="#process">Process</a>
-            <a href="#contact">Contact</a>
-        </nav>
+      <div class="logo-mark">AR · Studio</div>
+      <nav>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
 
     <section class="hero">
-        <div>
-            <div class="hero-title">Arthur&nbsp;Richards</div>
-            <div class="hero-subtitle">
-                Artist, craftsman, and problem solver working at the intersection of woodworking, joinery, and general solution focused design.
-            </div>
-            <div class="hero-tagline">
-                Boxes, humidors, furniture, gates, and one-off pieces built to last.
-            </div>
-
-            <div class="pill-row">
-                <div class="pill">Custom boxes &amp; humidors</div>
-                <div class="pill">Fine joinery</div>
-                <div class="pill">Restoration</div>
-            </div>
-
-            <div class="hero-actions">
-                <a class="btn btn-primary" href="#work">View Work</a>
-                <a class="btn btn-ghost" href="#contact">Start a Conversation</a>
-            </div>
+      <div>
+        <div class="hero-title">Arthur&nbsp;Richards</div>
+        <div class="hero-subtitle">
+          Artist, craftsman, and problem solver working at the intersection of woodworking, joinery, and general solution focused design.
+        </div>
+        <div class="hero-tagline">
+          Boxes, humidors, furniture, gates, and one-off pieces built to last.
         </div>
 
-        <aside class="hero-card">
-            <div class="hero-card-inner">
-                <div class="hero-card-label">Focus</div>
-                <div class="hero-card-title">Small-scale pieces with oversized care.</div>
-                <ul class="hero-card-list">
-                    <li>Humidors and keepsake boxes with tight, clean lines.</li>
-                    <li>Joinery that balances strength, proportion, and grain.</li>
-                    <li>Repairs and restorations that respect the original intent.</li>
-                </ul>
-            </div>
-        </aside>
-    </section>
-</header>
+        <div class="pill-row">
+          <div class="pill">Custom boxes &amp; humidors</div>
+          <div class="pill">Fine joinery</div>
+          <div class="pill">Restoration</div>
+        </div>
 
-<main>
-    <!-- Work / Portfolio Preview -->
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#work">View Work</a>
+          <a class="btn btn-ghost" href="#contact">Start a Conversation</a>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <div class="hero-card-inner">
+          <div class="hero-card-label">Focus</div>
+          <div class="hero-card-title">Small-scale pieces with oversized care.</div>
+          <ul class="hero-card-list">
+            <li>Humidors and keepsake boxes with tight, clean lines.</li>
+            <li>Joinery that balances strength, proportion, and grain.</li>
+            <li>Repairs and restorations that respect the original intent.</li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+  </header>
+
+  <main>
     <section id="work" class="section">
-        <div class="section-header">
-            <div class="section-title">Selected Work</div>
-            <div class="section-subtitle">A few of the pieces currently on the bench or recently completed.</div>
-        </div>
+      <div class="section-header">
+        <div class="section-title">Selected Work</div>
+        <div class="section-subtitle">A few of the pieces currently on the bench or recently completed.</div>
+      </div>
 
-        <div class="portfolio-grid">
-            <!-- You can change these project cards to your real projects -->
-           <article class="proj-card">
+      <div class="portfolio-grid">
+        <!-- Project 1: Slider -->
+        <article class="proj-card">
+          <div class="proj-slider">
+            <div class="proj-slider-track">
+              <img class="proj-slide" src="box-angle.jpg" alt="Handcrafted hardwood box – angled view">
+              <img class="proj-slide" src="box-latch.jpg" alt="Handcrafted wooden latch detail">
+            </div>
+            <div class="proj-slider-hint">Swipe → for more views</div>
+          </div>
 
-    <!-- MAIN SLIDER -->
-   <!-- MAIN SLIDER -->
-<div class="proj-slider">
-  <div class="project-images">
-    <img src="box-angle.jpg" alt="Handcrafted hardwood box – angled view">
-    <img src="box-latch.jpg" alt="Handcrafted wooden latch detail">
-  </div>
-  <div class="proj-slider-hint">Swipe → for more views</div>
-</div>
+          <div class="proj-thumbs">
+            <img src="image.png" class="proj-thumb" alt="">
+            <img src="image (1).png" class="proj-thumb" alt="">
+            <img src="Inside Tray.png" class="proj-thumb" alt="">
+            <img src="Cedar Lining.png" class="proj-thumb" alt="">
+          </div>
 
-<!-- THUMBNAILS -->
-<div class="proj-thumbs">
-  <a href="#h-1"><img src="image.png" class="proj-thumb" alt=""></a>
-  <a href="#h-2"><img src="image (1).png" class="proj-thumb" alt=""></a>
-  <a href="#h-3"><img src="Inside Tray.png" class="proj-thumb" alt=""></a>
-  <a href="#h-4"><img src="Cedar Lining.png" class="proj-thumb" alt=""></a>
-</div>
+          <div class="proj-tag">Humidor</div>
+          <div class="proj-title">Walnut &amp; Spanish Cedar Cigar Box</div>
+          <div class="proj-desc">
+            Hand-cut joinery, Spanish cedar lining, and hand-crafted wooden hinges and latch.
+          </div>
+          <div class="proj-meta">In progress · Concept / prototype</div>
+        </article>
 
-<!-- TEXT CONTENT -->
-<div class="proj-tag">Humidor</div>
-<div class="proj-title">Walnut &amp; Spanish Cedar Cigar Box</div>
-<div class="proj-desc">
-  Hand-cut joinery, Spanish cedar lining, and hand-crafted wooden hinges and latch.
-</div>
-<div class="proj-meta">In progress · Concept / prototype</div>
-    <!-- TEXT CONTENT -->
-    <div class="proj-tag">Humidor</div>
-    <div class="proj-title">Walnut &amp; Spanish Cedar Cigar Box</div>
-    <div class="proj-desc">
-        Hand-cut joinery, Spanish cedar lining, and hand-crafted wooden hinges and latch.
-    </div>
-    <div class="proj-meta">In progress · Concept / prototype</div>
-</article>
-    <div class="proj-tag">Humidor</div>
-    <div class="proj-title">Walnut &amp; Spanish Cedar Cigar Box</div>
-    <div class="proj-desc">
-        Hand-cut joinery, Spanish cedar lining, and hardware chosen for a quiet, precise close.
-    </div>
-    <div class="proj-meta">In progress · Concept / prototype</div>
-</article>
+        <!-- Project 2 -->
+        <article class="proj-card">
+          <img src="Maple Keepsake.png" alt="Maple Keepsake Box" style="width:100%; border-radius:6px; margin-bottom:8px;">
+          <img src="Maple Keepsake (2).png" alt="Maple Keepsake Box alternate view" style="width:100%; border-radius:6px; margin-bottom:8px;">
+          <div class="proj-tag">Box</div>
+          <div class="proj-title">Maple Keepsake Box</div>
+          <div class="proj-desc">
+            Figured maple showcased with simple lines and walnut inlayed dovetails so the figure does the talking.
+          </div>
+          <div class="proj-meta">Personal work · One-off piece</div>
+        </article>
 
-<article class="proj-card">
-  <img src="Maple Keepsake.png" alt="Maple Keepsake Box" style="width:100%; border-radius:6px; margin-bottom:8px;">
-  <img src="Maple Keepsake (2).png" alt="Maple Keepsake Box alternate view" style="width:100%; border-radius:6px; margin-bottom:8px;">
+        <!-- Project 3 -->
+        <article class="proj-card">
+          <img src="Walnut Jewelry Box.jpeg" alt="Walnut Jewelry Box" style="width:100%; border-radius:6px; margin-bottom:8px;">
+          <img src="Side Walnut.jpeg" alt="Side Walnut" style="width:100%; border-radius:6px; margin-bottom:8px;">
+          <img src="IMG_0956.png" alt="IMG_0956" style="width:100%; border-radius:6px;">
+          <div class="proj-tag">Box</div>
+          <div class="proj-title">Walnut Jewelry Box</div>
+          <div class="proj-desc">
+            Walnut jewelry box with hand-cut maple inlayed dovetails and other intricate details.
+          </div>
+          <div class="proj-meta">Personal work · One-off piece</div>
+        </article>
 
-  <div class="proj-tag">Box</div>
-  <div class="proj-title">Maple Keepsake Box</div>
-  <div class="proj-desc">
-    Figured maple showcased with simple lines and walnut inlayed dovetails so the figure does the talking.
-  </div>
-  <div class="proj-meta">Personal work · One-off piece</div>
-</article>
-
-<article class="proj-card">
-  <img src="Walnut Jewelry Box.jpeg" alt="Walnut Jewelry Box" style="width:100%; border-radius:6px;">
-  <img src="Side Walnut.jpeg" alt="Side Walnut" style="width:100%; border-radius:6px;">
-    <img src="IMG_0956.png" alt="IMG_0956" style="width:100%; border-radius:6px;">
-  <div class="proj-tag">Box</div>
-  <div class="proj-title">Walnut Jewelry Box</div>
-  <div class="proj-desc">
-    Walnut jewelry box with hand-cut maple inlayed dovetails and other intricate details.
-  </div>
-  <div class="proj-meta">Personal work · One-off piece</div>
-</article>
-
-            <article class="proj-card">
-                <div class="proj-tag">Restoration</div>
-                <div class="proj-title">Furniture Repair &amp; Refinement</div>
-                <div class="proj-desc">
-                    Careful structural repairs and finish touch-ups to extend the life of well-used pieces.
-                </div>
-                <div class="proj-meta">Client work · Before / after photos coming soon</div>
-            </article>
-        </div>
+        <!-- Project 4 -->
+        <article class="proj-card">
+          <div class="proj-tag">Restoration</div>
+          <div class="proj-title">Furniture Repair &amp; Refinement</div>
+          <div class="proj-desc">
+            Careful structural repairs and finish touch-ups to extend the life of well-used pieces.
+          </div>
+          <div class="proj-meta">Client work · Before / after photos coming soon</div>
+        </article>
+      </div>
     </section>
 
-    <!-- About / Approach -->
     <section id="about" class="section">
-        <div class="section-header">
-            <div class="section-title">About</div>
-            <div class="section-subtitle">A self-taught background in art, aesthetics, repair, and problem-solving informs everything I build.</div>
+      <div class="section-header">
+        <div class="section-title">About</div>
+        <div class="section-subtitle">A self-taught background in art, aesthetics, repair, and problem-solving informs everything I build.</div>
+      </div>
+
+      <div class="split">
+        <div>
+          <p>
+            I’m Arthur Richards, working out of Southern California. I’m drawn to designs that feel calm at first
+            glance and reveal small details the longer you live with them: proportion, a joint that lines up just
+            right, grain that carries around a corner, and beautifully contrasting wood types.
+          </p>
+          <p>
+            Most of my work lives in the space between function and ritual: humidors, boxes, and small furniture
+            that people use every day but still notice. I like clear communication, realistic constraints, and
+            solving the practical problems that come with real materials and real use.
+          </p>
         </div>
 
-        <div class="split">
-            <div>
-                <p>
-                    I’m Arthur Richards, working out of Southern California. I’m drawn to designs that feel calm at first
-                    glance and reveal small details the longer you live with them: proportion, a joint that lines up just
-                    right, grain that carries around a corner, and beautifully contrasting wood types.
-                </p>
-                <p>
-                    Most of my work lives in the space between function and ritual: humidors, boxes, and small furniture
-                    that people use every day but still notice. I like clear communication, realistic constraints, and
-                    solving the practical problems that come with real materials and real use.
-                </p>
-            </div>
-
-            <aside class="card-muted">
-                <h3>Materials &amp; influences</h3>
-                <ul class="muted-list">
-                    <li>Walnut, oak, spalted and live-edge stock when it serves the design.</li>
-                    <li>Joinery informed by Japanese craft, Mid-Century restraint, and a bit of Art Deco rhythm.</li>
-                    <li>Preference for durable finishes and hardware that feels solid, not flashy.</li>
-                </ul>
-            </aside>
-        </div>
+        <aside class="card-muted">
+          <h3>Materials &amp; influences</h3>
+          <ul class="muted-list">
+            <li>Walnut, oak, spalted and live-edge stock when it serves the design.</li>
+            <li>Joinery informed by Japanese craft, Mid-Century restraint, and a bit of Art Deco rhythm.</li>
+            <li>Preference for durable finishes and hardware that feels solid, not flashy.</li>
+          </ul>
+        </aside>
+      </div>
     </section>
 
-    <!-- Process -->
     <section id="process" class="section">
-        <div class="section-header">
-            <div class="section-title">Process</div>
-            <div class="section-subtitle">A simple, clear path from idea to finished piece.</div>
-        </div>
+      <div class="section-header">
+        <div class="section-title">Process</div>
+        <div class="section-subtitle">A simple, clear path from idea to finished piece.</div>
+      </div>
 
-        <div class="split">
-            <div class="card-muted">
-                <h3>01 · Conversation</h3>
-                <p>
-                    We start with a short conversation about what you need: size, use, rough budget, and any reference
-                    pieces you like. A quick sketch or example photo is more than enough.
-                </p>
-            </div>
-            <div class="card-muted">
-                <h3>02 · Design &amp; Details</h3>
-                <p>
-                    I propose a direction, materials, and timeline. Once we agree, I finalize dimensions and key details
-                    before cutting into any stock.
-                </p>
-            </div>
-            <div class="card-muted">
-                <h3>03 · Build &amp; Delivery</h3>
-                <p>
-                    I build the piece, send the occasional progress photo if you’d like, and arrange pickup or shipping
-                    once everything feels right.
-                </p>
-            </div>
+      <div class="split">
+        <div class="card-muted">
+          <h3>01 · Conversation</h3>
+          <p>
+            We start with a short conversation about what you need: size, use, rough budget, and any reference
+            pieces you like. A quick sketch or example photo is more than enough.
+          </p>
         </div>
+        <div class="card-muted">
+          <h3>02 · Design &amp; Details</h3>
+          <p>
+            I propose a direction, materials, and timeline. Once we agree, I finalize dimensions and key details
+            before cutting into any stock.
+          </p>
+        </div>
+        <div class="card-muted">
+          <h3>03 · Build &amp; Delivery</h3>
+          <p>
+            I build the piece, send the occasional progress photo if you’d like, and arrange pickup or shipping
+            once everything feels right.
+          </p>
+        </div>
+      </div>
     </section>
 
-    <!-- Contact -->
     <section id="contact" class="section">
-        <div class="section-header">
-            <div class="section-title">Contact</div>
-            <div class="section-subtitle">Reach out if you have a project in mind or just want to talk through an idea.</div>
+      <div class="section-header">
+        <div class="section-title">Contact</div>
+        <div class="section-subtitle">Reach out if you have a project in mind or just want to talk through an idea.</div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-item">
+          <div class="contact-label">Email</div>
+          <p><a href="mailto:arthur.j.richards@gmail.com">arthur.j.richards@gmail.com</a></p>
+
+          <div class="contact-label">Instagram</div>
+          <p><a href="https://instagram.com/arthurjrichards.design" target="_blank" rel="noopener noreferrer">@arthurjrichards.design</a></p>
         </div>
 
-        <div class="contact-grid">
-            <div class="contact-item">
-                <div class="contact-label">Email</div>
-                <!-- TODO: replace with your real email -->
-                <p><a href="mailto:arthur.j.richards@gmail.com">arthur.j.richards@gmail.com</a></p>
-
-                <div class="contact-label">Instagram</div>
-                <!-- TODO: replace with your real handle -->
-                <p><a href="https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Finstagram.com%2Farthurjrichards.design&data=05%7C02%7C%7C568f276f18c44fa3732208de344bca4c%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C639005697272202556%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=C%2BGBCm6sQ9MQM6%2Bignl7BtgVdSfyg%2Fy8IQRojkEeV2g%3D&reserved=0" target="_blank">@arthurjrichards.design</a></p>
-            </div>
-
-            <div class="contact-item card-muted">
-                <h3>What helps me help you</h3>
-                <ul class="muted-list">
-                    <li>Rough dimensions or the space the piece needs to live in.</li>
-                    <li>How you plan to use it (daily, display, storage, etc.).</li>
-                    <li>Any photos of work you like—mine or someone else’s.</li>
-                </ul>
-            </div>
+        <div class="contact-item card-muted">
+          <h3>What helps me help you</h3>
+          <ul class="muted-list">
+            <li>Rough dimensions or the space the piece needs to live in.</li>
+            <li>How you plan to use it (daily, display, storage, etc.).</li>
+            <li>Any photos of work you like—mine or someone else’s.</li>
+          </ul>
         </div>
+      </div>
     </section>
-</main>
+  </main>
 
-<footer>
+  <footer>
     © <span id="year"></span> Arthur Richards. Built with care.
-</footer>
+  </footer>
 
-<script>
+  <script>
     document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+  </script>
 </body>
 </html>
