@@ -383,16 +383,15 @@
       color: var(--muted);
     }
 .repair-gallery {
-  grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: 1fr;
+      display: flex;
+    flex-direction: column;
     gap: 8px;
     margin-bottom: 12px;
 }
 
 .repair-gallery img {
     width: 100%;
-    height: 180px;
+    max-height: 220px;
     object-fit: cover;
     border-radius: 6px;
 }
